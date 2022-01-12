@@ -63,6 +63,12 @@ let idBefore = 0;
 let idAtual;
 let isDead = false;
 
+//Reproduz o tema da tela de título.
+window.onload = function() {
+    title.play();
+    title.loop = true;
+}
+
 //Desativa a função "Scroll" das teclas "Arrow".
 window.addEventListener("keydown",
     function(e){
@@ -159,10 +165,6 @@ function neighborCheck() {
         }
     }
 }
-
-//Reproduz o tema da tela de título.
-title.play();
-title.loop = true;
 
 //Desenha a comida.
 function drawFood() {
