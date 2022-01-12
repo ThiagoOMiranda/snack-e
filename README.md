@@ -1,5 +1,7 @@
+<p align="center">
+<img width="83" src="./img/tile01.svg"><img width="83" src="./img/tile01.svg"><img width="83" src="./img/tile01.svg"><img width="83" src="./img/tile01.svg"><img width="83" src="./img/tile01.svg"><img width="83" src="./img/tile01.svg"><img width="83" src="./img/tile01.svg"><img width="83" src="./img/tile01.svg"><img width="83" src="./img/tile01.svg"><img width="83" src="./img/tile01.svg">
+</p>
 
-<center>
 
 PROJETO  FINAL DO BOOTCAMP: ***HTML WEB DEVELOPER*** DA DIO
 
@@ -7,12 +9,13 @@ PROJETO  FINAL DO BOOTCAMP: ***HTML WEB DEVELOPER*** DA DIO
 
 ***
 
-![imagem](./img/game-logo.svg "game logo")
+<p align="center"><img width="350" src="./img/game-logo.svg"></p>
 
-## **O JOGO DA COBRINHA  ( *The Snake Game* )**
+<h2 align="center">
 
+  **O JOGO DA COBRINHA  ( *The Snake Game* )**
 
-</center>
+</h2>
 
 ***
 
@@ -20,17 +23,13 @@ PROJETO  FINAL DO BOOTCAMP: ***HTML WEB DEVELOPER*** DA DIO
 
 ***
 
-<center>
-
-### **Exercício proposto:**
-
-<img src="./files/ref.jpg" style="zoom:60%;"/>
-
-</center>
-
+### **Exercício apresentado:**
+<br>
+<p align="center"><img width="500" src="./files/ref.jpg"/></p>
 <br>
 
 ***
+
 <br>
 
 &emsp;&emsp;Parte importante e adicional da atividade é customizar o código, adicionando melhorias e características próprias com ênfase no aprendizado e na aplicação de novos métodos e funções do Javascript.
@@ -39,20 +38,19 @@ PROJETO  FINAL DO BOOTCAMP: ***HTML WEB DEVELOPER*** DA DIO
 
 ***
 
-<center>
+<h2 align="center">
 
-## **MELHORIAS IMPLEMENTADAS**
+  **MELHORIAS IMPLEMENTADAS**
+
+</h2>
 
 ### **Resultado obtido:**
-
-<img src="./files/resultado.jpg" style="zoom:55%;"/>              
-
-</center>
-
+<br>
+<p align="center"><img width="700" src="./files/resultado.jpg"/></p>              
 <br>
 
-* [x]  Aumento gradativo da velocidade a cada ponto.              
-* [x]  Placar marcador de pontos.
+&emsp;&emsp;* [x]  Aumento gradativo da velocidade a cada ponto.              
+&emsp;&emsp;* [x]  Placar marcador de pontos.
 * [x]  Placar de melhor resultado "*TopScore*".
 * [x]  Implementação de "Sprite sheet" para a snake e comidas.
 * [x]  Condição que identifica a direção e atribui o sprite adequado da cabeça.
@@ -88,4 +86,12 @@ PROJETO  FINAL DO BOOTCAMP: ***HTML WEB DEVELOPER*** DA DIO
 
 * [ ]  Aplicação da responsividade para diversos dispositivos.
 * [ ]  Implementação de jogabilidade para dispositivos mobile.
+
+<br>
+
+***
+
+<p align="center">
+<img width="83" src="./img/tile02.svg"><img width="83" src="./img/tile02.svg"><img width="83" src="./img/tile02.svg"><img width="83" src="./img/tile02.svg"><img width="83" src="./img/tile02.svg"><img width="83" src="./img/tile02.svg"><img width="83" src="./img/tile02.svg"><img width="83" src="./img/tile02.svg"><img width="83" src="./img/tile02.svg"><img width="83" src="./img/tile02.svg">
+</p>
 
