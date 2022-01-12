@@ -49,8 +49,8 @@ PROJETO  FINAL DO BOOTCAMP: ***HTML WEB DEVELOPER*** DA DIO
 <p align="center"><img width="700" src="./files/resultado.jpg"/></p>              
 <br>
 
-&emsp;&emsp;* [x]  Aumento gradativo da velocidade a cada ponto.              
-&emsp;&emsp;* [x]  Placar marcador de pontos.
+* [x]  Aumento gradativo da velocidade a cada ponto.              
+* [x]  Placar marcador de pontos.
 * [x]  Placar de melhor resultado "*TopScore*".
 * [x]  Implementação de "Sprite sheet" para a snake e comidas.
 * [x]  Condição que identifica a direção e atribui o sprite adequado da cabeça.
