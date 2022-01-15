@@ -69,7 +69,14 @@ PROJETO  FINAL DO BOOTCAMP: ***HTML WEB DEVELOPER*** DA DIO
 * [x]  Condição que previne que a comida seja gerada no mesmo local do corpo da snake.
 * [x]  Novas regras de fim de jogo, não permitindo se chocar com os limites da arena.
 * [x]  Implementação do botão "Jogar / Pausar".
-* [x]  Implementação do botão "Reiniciar" atualizando o "TopScore".                                               
+* [x]  Implementação do botão "Reiniciar" atualizando o "TopScore".
+* [x]  Aplicação da responsividade para a tela de 1024px.
+* [x]  Adicionado botão de "switch" de dificuldades.
+* [x]  Implementação das condições de transição atráves dos túneis.
+* [x]  Reformulação das regras de colisão.
+* [x]  Lógica geradora de aleatoriedade para os túneis de "warp".
+* [x]  Aprimoramento dos botôes de Jogar/Pausar e Reiniciar.
+* [x]  Implementação de novos efeitos sonoros, warp e pause.                                           
 <br>
 
 ***
@@ -84,7 +91,7 @@ PROJETO  FINAL DO BOOTCAMP: ***HTML WEB DEVELOPER*** DA DIO
 
 <br>
 
-* [ ]  Aplicação da responsividade para diversos dispositivos.
+* [ ]  Aplicação da responsividade para mais dispositivos.
 * [ ]  Implementação de jogabilidade para dispositivos mobile.
 
 <br>
