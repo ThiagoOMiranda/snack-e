@@ -46,7 +46,7 @@ PROJETO  FINAL DO BOOTCAMP: ***HTML WEB DEVELOPER*** DA DIO
 
 ### **Resultado obtido:**
 <br>
-<p align="center"><img width="700" src="./files/resultado.jpg"/></p>              
+<p align="center"><img width="700" src="./files/resultado01.jpg"/></p>              
 <br>
 
 * [x]  Aumento gradativo da velocidade a cada ponto.              
