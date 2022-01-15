@@ -637,8 +637,8 @@ function iniciarJogo() {
         food.x = Math.floor((Math.random() * 16) + 1) * box;
         food.y = Math.floor((Math.random() * 16) + 1) * box;
         frameFood = Math.floor(Math.random() * 7);
-        // interval -= 5;
-        interval += 5
+        interval -= 5;
+        // interval += 5
         idCount++;
         idBefore++;
         sprites();
