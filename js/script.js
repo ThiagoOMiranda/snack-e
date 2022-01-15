@@ -637,7 +637,8 @@ function iniciarJogo() {
         food.x = Math.floor((Math.random() * 16) + 1) * box;
         food.y = Math.floor((Math.random() * 16) + 1) * box;
         frameFood = Math.floor(Math.random() * 7);
-        interval -= 5;
+        // interval -= 5;
+        interval += 5
         idCount++;
         idBefore++;
         sprites();
@@ -686,7 +687,7 @@ function iniciarJogo() {
         clearInterval(jogo);
         // Executa funções e updates no fim do jogo.
         document.getElementById("play-btn").disabled = true;
-        document.getElementById("reset-btn").disabled = true;
+        // document.getElementById("reset-btn").disabled = true;
         document.getElementById("toggle").disabled = false;
         document.getElementById("board-text").innerHTML= "Game Over! <br><i>Que Pena, estava indo bem!</i> <br><br>Clique em REINICIAR e tente novamente!";
         document.getElementById("header").classList.remove("navbar-mod");
@@ -700,9 +701,10 @@ function iniciarJogo() {
         idAtual = idCount;
         hurt.play();
         dead.play();
-        dead.onended = function() {
-            document.getElementById("reset-btn").disabled = false;
-        }
+        dead.currentTime = 0;
+        // dead.onended = function() {
+        //     document.getElementById("reset-btn").disabled = false;
+        // }
     }
 }
 
@@ -796,6 +798,10 @@ function reinicio() {
 //Atribui função "Reiniciar" ao botão.
 document.getElementById("reset-btn").addEventListener("click", function() {
     window.requestAnimationFrame(iniciarJogo);
+    document.getElementById("play-btn").disabled = false;
+    document.getElementById("toggle").disabled = true;
+    dead.pause();
+    dead.currentTime = 0;
     if(isPaused == true) {
         inicio();
     }
