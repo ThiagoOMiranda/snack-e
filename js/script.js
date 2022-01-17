@@ -45,7 +45,6 @@ const hurt = new Audio();
 const bonus = new Audio();
 const pipe = new Audio();
 const pause = new Audio();
-// const title = new Audio();
 
 eat.src = "src/chomp.mp3"
 dead.src ="src/gameOver.mp3";
@@ -53,9 +52,8 @@ theme.src ="src/theme01.mp3";
 hurt.src = "src/hurt.mp3";
 muv.src = "src/muv.mp3";
 bonus.src = "src/bonus.mp3";
-pipe.src = "src/pipe.mp3";
+pipe.src = "src/pipe01.mp3";
 pause.src = "src/pause.mp3";
-// title.src = "src/title.mp3";
 
 var keys = {};
 let keyUp = document.getElementById("keyUp");
@@ -122,7 +120,7 @@ function criarBG() {
 function criarSnake() {
     context.drawImage(head, 320 * headFrameX, 320 * headFrameY, 320, 320, snake[0].x, snake[0].y, box, box);
     for(i = 1; i < snake.length; i++) {
-        if(i % 2 == 0) {
+        if(i % 2 === 0) {
             if(snake[i] == snake[snake.length-1]) {
                 neighborCheck();
                 // context.drawImage(head, 320 * headFrameX, 320 * headFrameY, 320, 320, snake[snake.length-1].x, snake[snake.length-1].y, box, box);
@@ -142,7 +140,7 @@ function criarSnake() {
 
 // Checa a localização do vizinho imediato da cauda.
 function neighborCheck() {
-    if(snake[snake.length-2].x == snake[snake.length-1].x + box && snake[snake.length-2].y == snake[snake.length-1].y) {
+    if(snake[snake.length-2].x === snake[snake.length-1].x + box && snake[snake.length-2].y === snake[snake.length-1].y) {
         if(i % 2 == 0) {
             context.drawImage(head, 320 * 2, 320 * 2, 320, 320, snake[snake.length-1].x, snake[snake.length-1].y, box, box);
         } else {
@@ -152,7 +150,7 @@ function neighborCheck() {
                 context.drawImage(head, 320 * 2, 320 * 3, 320, 320, snake[snake.length-1].x, snake[snake.length-1].y, box, box);
             }
         }
-    } else if(snake[snake.length-2].x == snake[snake.length-1].x && snake[snake.length-2].y == snake[snake.length-1].y + box) {
+    } else if(snake[snake.length-2].x === snake[snake.length-1].x && snake[snake.length-2].y === snake[snake.length-1].y + box) {
         if(i % 2 == 0) {
             context.drawImage(head, 320 * 3, 320 * 2, 320, 320, snake[snake.length-1].x, snake[snake.length-1].y, box, box);
         } else {
@@ -162,7 +160,7 @@ function neighborCheck() {
                 context.drawImage(head, 320 * 3, 320 * 3, 320, 320, snake[snake.length-1].x, snake[snake.length-1].y, box, box);
             } 
         }
-    } else if(snake[snake.length-2].x == snake[snake.length-1].x && snake[snake.length-2].y == snake[snake.length-1].y - box) {
+    } else if(snake[snake.length-2].x === snake[snake.length-1].x && snake[snake.length-2].y === snake[snake.length-1].y - box) {
         if(i % 2 == 0) {
             context.drawImage(head, 320 * 1, 320 * 2, 320, 320, snake[snake.length-1].x, snake[snake.length-1].y, box, box);
         } else {
@@ -172,7 +170,7 @@ function neighborCheck() {
                 context.drawImage(head, 320 * 1, 320 * 3, 320, 320, snake[snake.length-1].x, snake[snake.length-1].y, box, box);
             }
         }
-    } else if(snake[snake.length-2].x == snake[snake.length-1].x - box && snake[snake.length-2].y == snake[snake.length-1].y) {
+    } else if(snake[snake.length-2].x === snake[snake.length-1].x - box && snake[snake.length-2].y === snake[snake.length-1].y) {
         if(i % 2 == 0) {
             context.drawImage(head, 320 * 0, 320 * 2, 320, 320, snake[snake.length-1].x, snake[snake.length-1].y, box, box);
         } else {
@@ -277,8 +275,8 @@ function doorCollision() {
 
 // Adiciona as condições de "warp" dos túneis.
 function warpPipe() {
-    if(snake[0].x > 17 * box && direction == "right") {
-        if(document.getElementById("toggle").checked == true) {
+    if(snake[0].x > 17 * box && direction === "right") {
+        if(document.getElementById("toggle").checked === true) {
             testPipe();
         } else {
             snake[0].x = 0 * box;
@@ -289,8 +287,8 @@ function warpPipe() {
             pipe.currentTime = 0;
             theme.play();
         }
-    } else if(snake[0].x < 0 * box && direction == "left") {
-        if(document.getElementById("toggle").checked == true) {
+    } else if(snake[0].x < 0 * box && direction === "left") {
+        if(document.getElementById("toggle").checked === true) {
             testPipe();
         } else {
             snake[0].x = 17 * box;
@@ -301,8 +299,8 @@ function warpPipe() {
             pipe.currentTime = 0;
             theme.play();
         }
-    } else if(snake[0].y > 17 * box && direction == "down") {
-        if(document.getElementById("toggle").checked == true) {
+    } else if(snake[0].y > 17 * box && direction === "down") {
+        if(document.getElementById("toggle").checked === true) {
             testPipe();
         } else {
             snake[0].y = 0 * box;
@@ -313,8 +311,8 @@ function warpPipe() {
             pipe.currentTime = 0;
             theme.play();
         }
-    } else if(snake[0].y < 0 * box && direction == "up") {
-        if(document.getElementById("toggle").checked == true) {
+    } else if(snake[0].y < 0 * box && direction === "up") {
+        if(document.getElementById("toggle").checked === true) {
             testPipe();
         } else {
             snake[0].y = 17 * box;
@@ -328,135 +326,90 @@ function warpPipe() {
     }
 }
 
+// Sorteia entre 2 números inteiros.
+let between2 = function (n1,n2) {
+    const sort = Math.floor(Math.random() * 10);
+    return sort < 5 ? n1 : n2;
+}
+
 let sort;
 
-// Sorteia entre 2 números inteiros.
-function betweenTwo(n1, n2) {
-    sort = Math.floor(Math.random() * 10);
-    if(sort < 5) {
-        return n1
-    } else {
-        return n2;
-    }
-}
+// function betweenTwo(n1, n2) {
+//     sort = Math.floor(Math.random() * 10);
+//     if(sort < 5) {
+//         return n1
+//     } else {
+//         return n2;
+//     }
+// }
 
 // Sorteia entre 4 números inteiros.
-function betweenFour(n1, n2, n3, n4) {
-    sort = Math.floor(Math.random() * 16);
-    if(sort < 4) {
-        return n1;
-    } else if(sort > 3 && sort < 8) {
-        return n2;
-    } else if(sort > 7 && sort < 12) {
-        return n3;
-    } else if(sort > 11 && sort < 16) {
-        return n4;
-    }
+let between4 = function (n1, n2, n3, n4) {
+    const sort = Math.floor(Math.random() * 10);
+    return sort < 4 ? n1 : sort > 3 && sort < 8 ? n2 : sort > 7 && sort < 12 ? n3 : n4;
 }
+
+// function betweenFour(n1, n2, n3, n4) {
+//     sort = Math.floor(Math.random() * 16);
+//     if(sort < 4) {
+//         return n1;
+//     } else if(sort > 3 && sort < 8) {
+//         return n2;
+//     } else if(sort > 7 && sort < 12) {
+//         return n3;
+//     } else if(sort > 11 && sort < 16) {
+//         return n4;
+//     }
+// }
 
 // Função de aleatoriedade de "warp" dos túneis.
 function sortPipe(a1, a2, b1, b2, c1, c2, c3, c4, d1, d2, d3, d4) {
     switch (Math.floor(Math.random() * 4)) {
         case 0:
             snake[0].x = 0 * box;
-            snake[0].y = betweenTwo(a1, a2) * box;
+            snake[0].y = between2(a1, a2) * box;
             direction = "right";
-            pipe.play();
-            pipe.currentTime = 0;
         break;
 
         case 1:
             snake[0].x = 17 * box;
-            snake[0].y = betweenTwo(b1, b2) * box;
+            snake[0].y = between2(b1, b2) * box;
             direction = "left";
-            pipe.play();
-            pipe.currentTime = 0;
         break;
 
         case 2:
             snake[0].y = 0 * box;
-            snake[0].x = betweenFour(c1, c2, c3, c4) * box;
+            snake[0].x = between4(c1, c2, c3, c4) * box;
             direction = "down";
-            pipe.play();
-            pipe.currentTime = 0;
         break;
 
         case 3:
             snake[0].y = 17 * box;
-            snake[0].x = betweenFour(d1, d2, d3, d4) * box;
+            snake[0].x = between4(d1, d2, d3, d4) * box;
             direction = "up";
-            pipe.play();
-            pipe.currentTime = 0;
         break;
     }   
 }
-
-// function sortPipe() {
-//     switch (Math.floor(Math.random() * 4)) {
-//         case 0:
-//             snake[0].x = 0 * box;
-//             snake[0].y = betweenTwo(8, 9) * box;
-//             direction = "right";
-//             pipe.play();
-//             pipe.currentTime = 0;
-//         break;
-
-//         case 1:
-//             snake[0].x = 17 * box;
-//             snake[0].y = betweenTwo(8, 9) * box;
-//             direction = "left";
-//             pipe.play();
-//             pipe.currentTime = 0;
-//         break;
-
-//         case 2:
-//             snake[0].y = 0 * box;
-//             snake[0].x = betweenFour(2, 3, 14, 15) * box;
-//             direction = "down"
-//             pipe.play();
-//             pipe.currentTime = 0;
-//         break;
-
-//         case 3:
-//             snake[0].y = 17 * box;
-//             snake[0].x = betweenFour(2, 3, 14, 15) * box;
-//             direction = "up"
-//             pipe.play();
-//             pipe.currentTime = 0;
-//         break;
-//     }   
-// }
 
 // Aplica a aleatoriedade do "warp".
 function testPipe() {
     switch(direction) {
         case "right":
-            if(snake[0].y == 8 * box) {
-                sortPipe(9, 9, 8, 9, 2, 3, 14, 15, 2, 3, 14, 15);
-            } else if(snake[0].y == 9 * box) {
-                sortPipe(8, 8, 8, 9, 2, 3, 14, 15, 2, 3, 14, 15);
-            }
-        break;
-        case "left":
-            if(snake[0].y == 8 * box) {
+            if(snake[0].y === 8 * box) {
                 sortPipe(8, 9, 9, 9, 2, 3, 14, 15, 2, 3, 14, 15);
             } else if(snake[0].y == 9 * box) {
                 sortPipe(8, 9, 8, 8, 2, 3, 14, 15, 2, 3, 14, 15);
             }
         break;
-        case "down":
-            if(snake[0].x == 2 * box) {
-                sortPipe(8, 9, 8, 9, 3, 3, 14, 15, 2, 3, 14, 15);
-            } else if(snake[0].x == 3 * box) {
-                sortPipe(8, 9, 8, 9, 2, 14, 14, 15, 2, 3, 14, 15);
-            } else if(snake[0].x == 14 * box) {
-                sortPipe(8, 9, 8, 9, 2, 3, 15, 15, 2, 3, 14, 15);
-            } else if(snake[0].x == 15 * box) {
-                sortPipe(8, 9, 8, 9, 2, 2, 3, 14, 2, 3, 14, 15);
+        case "left":
+            if(snake[0].y === 8 * box) {
+                sortPipe(9, 9, 8, 9, 2, 3, 14, 15, 2, 3, 14, 15);
+            } else if(snake[0].y == 9 * box) {
+                sortPipe(8, 8, 9, 9, 2, 3, 14, 15, 2, 3, 14, 15);
             }
         break;
-        case "up":
-            if(snake[0].x == 2 * box) {
+        case "down":
+            if(snake[0].x === 2 * box) {
                 sortPipe(8, 9, 8, 9, 2, 3, 14, 15, 3, 3, 14, 15);
             } else if(snake[0].x == 3 * box) {
                 sortPipe(8, 9, 8, 9, 2, 3, 14, 15, 2, 14, 14, 15);
@@ -464,6 +417,17 @@ function testPipe() {
                 sortPipe(8, 9, 8, 9, 2, 3, 14, 15, 2, 3, 15, 15);
             } else if(snake[0].x == 15 * box) {
                 sortPipe(8, 9, 8, 9, 2, 3, 14, 15, 2, 2, 3, 14);
+            }
+        break;
+        case "up":
+            if(snake[0].x === 2 * box) {
+                sortPipe(8, 9, 8, 9, 3, 3, 14, 15, 2, 3, 14, 15);
+            } else if(snake[0].x == 3 * box) {
+                sortPipe(8, 9, 8, 9, 2, 14, 14, 15, 2, 3, 14, 15);
+            } else if(snake[0].x == 14 * box) {
+                sortPipe(8, 9, 8, 9, 2, 3, 15, 15, 2, 3, 14, 15);
+            } else if(snake[0].x == 15 * box) {
+                sortPipe(8, 9, 8, 9, 2, 2, 3, 14, 2, 3, 14, 15);
             }
         break;
     }
@@ -482,7 +446,7 @@ function extra() {
         document.getElementById("board-text").innerHTML = "Nham-Nham! <br><br>BÔNUS!<br><br> <i>Ponto Extra!</i>";
         document.getElementById("board-text").classList.add("blink");
         score++;
-        if(isDead == false) {
+        if(isDead === false) {
             setTimeout(function() {
                 document.getElementById("board-text").innerText = "Coma todos os Snacks!";
                 document.getElementById("board-text").classList.remove("blink"); 
@@ -587,7 +551,7 @@ function iniciarJogo() {
 
     // Previne que a comida seja gerada no mesmo local do corpo da Snake.
     for (i = 1; i < snake.length; i++) {
-        if(food.x == snake[i].x && food.y == snake[i].y) {
+        if(food.x === snake[i].x && food.y === snake[i].y) {
             food.x = Math.floor((Math.random() * 16) + 1) * box;
             food.y = Math.floor((Math.random() * 16) + 1) * box;
         }
@@ -622,7 +586,7 @@ function iniciarJogo() {
             headFrameX = 1; break;
     }
 
-    if(snakeX != food.x || snakeY != food.y) {
+    if(snakeX !== food.x || snakeY !== food.y) {
         muv.play();
         snake.pop();
 
@@ -657,16 +621,16 @@ function iniciarJogo() {
     // if (snake[0].x > 15 * box && direction == "right" || snake[0].x < 0 && direction == "left" || snake[0].y > 15 * box && direction == "down" || snake[0].y < 0 && direction == "up" || collision(newHead,snake)) {
     //     headFrameY = 1;
 
-    if(snake[0].x > 16 * box && direction == "right" && snake[0].y < 8 * box
-    || snake[0].x > 16 * box && direction == "right" && snake[0].y > 9 * box
-    || snake[0].x < 1 * box && direction == "left" && snake[0].y < 8 * box
-    || snake[0].x < 1 * box && direction == "left" && snake[0].y > 9 * box
-    || snake[0].y > 16 * box && direction == "down" && snake[0].x < 2 * box
-    || snake[0].y > 16 * box && direction == "down" && snake[0].x > 3 * box && snake[0].x < 14 * box
-    || snake[0].y > 16 * box && direction == "down" && snake[0].x > 15 * box 
-    || snake[0].y < 1 && direction == "up" && snake[0].x < 2 * box
-    || snake[0].y < 1 && direction == "up" && snake[0].x > 3 * box && snake[0].x < 14 * box
-    || snake[0].y < 1 && direction == "up" && snake[0].x > 15 * box
+    if(snake[0].x > 16 * box && direction === "right" && snake[0].y < 8 * box
+    || snake[0].x > 16 * box && direction === "right" && snake[0].y > 9 * box
+    || snake[0].x < 1 * box && direction === "left" && snake[0].y < 8 * box
+    || snake[0].x < 1 * box && direction === "left" && snake[0].y > 9 * box
+    || snake[0].y > 16 * box && direction === "down" && snake[0].x < 2 * box
+    || snake[0].y > 16 * box && direction === "down" && snake[0].x > 3 * box && snake[0].x < 14 * box
+    || snake[0].y > 16 * box && direction === "down" && snake[0].x > 15 * box 
+    || snake[0].y < 1 && direction === "up" && snake[0].x < 2 * box
+    || snake[0].y < 1 && direction === "up" && snake[0].x > 3 * box && snake[0].x < 14 * box
+    || snake[0].y < 1 && direction === "up" && snake[0].x > 15 * box
     || collision(newHead,snake)
     || wallCollision()
     || doorCollision()) {
@@ -802,7 +766,7 @@ document.getElementById("reset-btn").addEventListener("click", function() {
     document.getElementById("toggle").disabled = true;
     dead.pause();
     dead.currentTime = 0;
-    if(isPaused == true) {
+    if(isPaused === true) {
         inicio();
     }
     reinicio();
